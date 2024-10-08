@@ -1,0 +1,10 @@
+.venv/
+data/
+docs/
+logs/
+tmp/
+*.ipynb
+frontend/
+docker_volumes/*
+.env
+.git/

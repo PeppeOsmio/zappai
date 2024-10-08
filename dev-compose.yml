@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgis/postgis:16-3.4
+    environment:
+      - POSTGRES_USER=${ZAPPAI_DB_USER}
+      - POSTGRES_PASSWORD=${ZAPPAI_DB_PASSWORD}
+      - POSTGRES_DB=${ZAPPAI_DB_NAME}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432       
+  
+  adminer:
+    image: adminer:latest
+    ports:
+      - 8080:8080
+
+volumes:
+  postgres_data:
